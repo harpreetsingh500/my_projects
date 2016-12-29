@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel='stylesheet' href='stylesheets/main.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+    <script src="javascript/app.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Message Encoder</h1>
+    </header>
+
+    <main>
+      <form id='encode'>
+        <label for='encodeInput'>Encode</label>
+        <textarea name='encodeMessage' id='encodeInput' rows='8' cols='50'></textarea>
+        <input type='submit' value='Encode Message'>
+      </form>
+
+      <div id='encodedMessage'></div>
+
+      <form id='decode'>
+        <label for='decodeInput'>Decode</label>
+        <textarea name='decodeMessage' id='decodeInput' rows='8' cols='50'></textarea>
+        <label for='key'>Key
+          <input type='text' name='key' id='key'>
+        </label>
+        <input type='submit' value='Decode Message'>
+      </form>
+
+      <div id='decodedMessage'></div>
+    </main>
+
+    <script id='show-message-encoded' type='text/x-handlebars'>
+      <p>Encoded Message: <textarea>{{message}}</textarea></p>
+      <p>Key: <input type='text' value={{key}}></p>
+    </script>
+
+    <script id='show-message-decoded' type='text/x-handlebars'>
+      <p>Decoded Message: <textarea>{{message}}</textarea></p>
+    </script>
+  </body>
+</html>

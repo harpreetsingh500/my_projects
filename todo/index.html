@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel='stylesheet' href='main.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+    <script src="todo.js"></script>
+  </head>
+
+  <body>
+<label for="nav-box">
+    </label>
+    <input type="checkbox" id="nav-box">
+
+    <nav>
+      <table class="all-todos">
+        <tr class='show-all-todos' class='highlight'><td class="title">All Todos</td><td class="total-todos"></td></tr>
+      </table>
+
+      <table class="completed">
+        <tr class='show-all-completed'><td class="title">Completed</td><td></td></tr>
+      </table>
+    </nav>
+
+    <main>
+      <ul class="todo-title">
+        <li class="todo-date">All Todos</li>
+        <li class="todo-amount">8</li>
+      </ul>
+
+      <a href="#" class="add-todo">Add new to do</a>
+
+      <ul class="todo-list"></ul>
+
+      <div class='todo-edit-background'></div>
+      <form class="todo-edit-form" action="#" method="get">
+        <label for="edit-title">Title</label>
+        <input type="text" id="edit-title" placeholder="Item 1" name='item'>
+        <br>
+
+        <label for="day">Due Date</label>
+        <div class="due-date">
+          <select name="day" id="day">
+            <option value='Day' selected>Day</option>
+          </select>/<select name="month" id='month'>
+            <option value="Month" selected>Month</option>
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>/<select name="year" id="year">
+            <option value="Year" selected>Year</option>
+          </select>
+        </div>
+        <br>
+
+        <label for="description" class="description">Description</label>
+        <textarea id="description" placeholder="Description" name='description'></textarea>
+
+        <div class="buttons">
+          <button type="submit" id='save'>Save</button>
+          <button type="submit" id='mark-complete'>Mark As Complete</button>
+        </div>
+      </form>
+    </main>
+
+    <script id='todo-items' type='text/x-handlebars'>
+      {{#if done}}
+        <li class='complete' data-date={{date}}>
+        <a href="#" class='todo-name done' data-id={{id}}>{{item}} - {{dueDate}}</a>
+      {{else}}
+        <li class='incomplete' data-date={{date}}>
+        <a href="#" class='todo-name' data-id={{id}}>{{item}} - {{dueDate}}</a>
+      {{/if}}
+      <a href="#" class='delete'><img src="images/delete-button.png"></a>
+      </li>
+    </script>
+  </body>
+</html>

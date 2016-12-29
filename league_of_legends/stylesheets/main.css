@@ -1,0 +1,141 @@
+@import url('reset.css');
+
+* {
+  box-sizing: border-box;
+  font: 18px arial, sans-serif;
+}
+
+body {
+  text-align: center;
+  background: #e2dced;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+#champion-container {
+  width: 95%;
+  margin: 40px auto 40px auto;
+}
+
+form label {
+  display: inline-block;
+  margin: 0 5px 5px 0;
+  border: 2px solid black;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+input[type='submit'] {
+  display: block;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+#champion-container h2 {
+  font-size: 40px;
+  margin: 10px 0 10px 0;
+}
+
+#champion-list {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.champion {
+  float: left;
+  width: 32.66%;
+  margin: 0 1% 1% 0;
+  cursor: pointer;
+}
+
+.champion:nth-child(3n) {
+  margin-right: 0;
+}
+
+.champion img {
+  width: 100%;
+}
+
+#modal {
+  position: fixed;
+  background: black;
+  opacity: .3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  display: none;
+}
+
+#champion-info {
+  position: absolute;
+  width: 80%;
+  background: #d3e0d0;
+  left: 50%;
+  margin-left: -40%;
+  margin-bottom: 20px;
+  z-index: 2;
+  display: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#champion-info h3 {
+  font-size: 26px;
+  margin: 10px 0;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.champion-spells li {
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 0 0 10px 0;
+}
+
+.champion-spells li p span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.champion-spells li p {
+  margin: 5px 0 0 0;
+}
+
+.champion-skins {
+  margin: 10px 0;
+}
+
+.champion-skins ul {
+  overflow: hidden;
+}
+
+.champion-skins li {
+  margin: 0 1% 1% 1%;
+  width: 48%;
+  float: left;
+}
+
+.champion-skins li p {
+  margin: 10px 0;
+}
+
+.champion-skins li img {
+  width: 100%
+}
+
+@media (max-width: 750px) {
+  .champion {
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+  
+  .champion-skins li {
+    width: 98%;
+    margin: 0 1% 5px 1%;
+  }
+}

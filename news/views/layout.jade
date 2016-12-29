@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title News
+    meta(name="viewport" content="width=device-width,initial-scale=1.0")
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    script(type='text/javascript' src='/javascripts/vendor/all.js')
+    script(type='text/javascript' src='/javascripts/handlebarsTemplates.js')
+  body
+    header
+      nav
+        ul
+          each type in newsTypes
+            li
+              case type
+                when "News"
+                  a.highlight(href="#{'#' + type.toLowerCase()}")= type
+                default
+                  a(href="#{'#' + type.toLowerCase()}")= type
+    main
+      ul
+        
+    script(type='text/javascript' src='/javascripts/models/article.js')
+    script(type='text/javascript' src='/javascripts/collections/articles.js')
+    script(type='text/javascript' src='/javascripts/app.js')
+    

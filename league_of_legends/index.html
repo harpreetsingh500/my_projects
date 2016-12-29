@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel='stylesheet' href='stylesheets/main.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+    <script src="javascript/main.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <div id='champion-container'>
+        <h2>Filter Champions By Type</h2>
+        <form id='sort-champions'>
+          <label>Assassin <input type='checkbox' value='Assassin'></label>
+          <label>Fighter <input type='checkbox' value='Fighter'></label>
+          <label>Mage <input type='checkbox' value='Mage'></label>
+          <label>Marksman <input type='checkbox' value='Marksman'></label>
+          <label>Melee <input type='checkbox' value='Melee'></label>
+          <label>Support <input type='checkbox' value='Support'></label>
+          <label>Tank <input type='checkbox' value='Tank'></label>
+          <input type='submit' value='Filter'>
+        </form>
+        <h2>Champions</h2>
+        <ul id='champion-list'></ul>
+      </div>
+      <div id='modal'></div>
+      <div id='champion-info'></div>
+    </main>
+
+    <script id='generate-champions' type='text/x-handlebars'>
+      <li class='champion' data-name={{championName}} data-type={{championType}}>
+        <img src={{championImage}}>
+      </li>
+    </script>
+
+    <script id='generate-champion-info' type='text/x-handlebars'>
+      <div class='champion-spells'>
+        <h2>Champion Name: {{championName}}</h2>
+        <h3>Spells</h3>
+        <ul>
+          <li><img src={{passiveImage}}><p><span>Passive:</span> {{passiveInfo}}</p></li>
+          <li><img src={{qImage}}><p><span>Q:</span> {{qInfo}}</p></li>
+          <li><img src={{wImage}}><p><span>W:</span> {{wInfo}}</p></li>
+          <li><img src={{eImage}}><p><span>E:</span> {{eInfo}}</p></li>
+          <li><img src={{rImage}}><p><span>R:</span> {{rInfo}}</p></li>
+        </ul>
+      </div>
+      <div class='champion-skins'>
+        <h3>Skins</h3>
+        <ul>
+          {{#each skins}}
+            <li>
+              <p>{{this.name}}</p>
+              <img src={{this.imageLink}} alt=' Image not found'>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </script>
+  </body>
+</html>

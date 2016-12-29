@@ -1,0 +1,8 @@
+Description: Steps needed to create a chess program.
+1. Create a empty 8 x 8 board.
+2. Put chess pieces on the board.
+3. Create a pawn class.
+ 1. A pawn can only move forward unless attacking.
+ 2. A pawn can only move one space forward unless it's the pawns first move 
+ then it can move two spaces forwar.
+ 3.

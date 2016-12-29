@@ -1,0 +1,371 @@
+@import url("reset.css");
+
+body,
+select, 
+button,
+input, 
+textarea {
+  font: 16px Helvetica, Arial, sans-serif;
+}
+
+label:hover,
+button {
+  cursor: pointer;
+}
+
+/*
+ CSS for the nav section
+*/
+
+nav {
+  float: left;
+  width: 335px;
+  background: #464f77;
+  color: #a3a7bb;
+  padding: 75px 0 217px 0;
+}
+
+/*
+ CSS for tables in the nav section
+*/
+
+nav table {
+  width: 100%;
+}
+
+nav tr {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 32px 14px 138px;
+  cursor: pointer;
+}
+
+nav td {
+  display: inline;
+}
+
+nav table tr:first-child {
+  margin-top: -14px;
+}
+
+.title {
+  font-size: 18px;
+  color: white;
+}
+
+.title:before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  margin: 0 11px 0 -37px;
+  vertical-align: middle;
+}
+
+/*
+ CSS for the table with the class all-todos
+*/
+
+.all-todos,
+.completed {
+  margin: 0 0 51px;
+  min-height: 200px;
+}
+
+.all-todos tr td:last-child,
+.completed tr td:last-child {
+  color: #c4c7d3;
+  font-size: 14px;
+  float: right;
+  padding: 1px 6px;
+  background: #6b7292;
+  border-radius: 50%;
+}
+
+.all-todos .title:before {
+  background: url("images/list-icon.png");  
+}
+
+.highlight {
+  background: #383f5f;
+  color: white;
+}
+
+.highlight td:last-child {
+  color: white;
+  background: #148fd5;
+}
+
+.total-todos {
+  margin: 4px 0 0 0;
+}
+
+/*
+ CSS for the table with the class completed
+*/
+
+.completed .title:before {
+  background: url("images/checkbox-complete.png");
+}
+
+.completed tr:nth-child(n + 2) td:first-child {
+  text-decoration: line-through;
+}
+
+/*
+ CSS for the main section
+*/
+
+main {
+  overflow: hidden;
+  padding: 77px 98px 228px 33px;
+}
+
+.todo-title {
+  margin: 0 0 43px;
+  display: inline-block;
+}
+
+main li {
+  display: inline-block;
+}
+
+.todo-date {
+  font-size: 21px;
+  color: #050505;
+  padding: 0 20px 0 0;
+}
+
+.todo-amount {
+  margin: 4px 0 0;
+  float: right;
+  font-size: 14px;
+  padding: 1px 6px;
+  background: #148fd5;
+  border-radius: 50%;
+  color: white;
+}
+
+.add-todo {
+  color: #148fd5;
+  padding: 0 0 17px;
+  display: block;
+  text-decoration: none;
+}
+
+.add-todo:before {
+  content: "";
+  background: url("images/add-todo.png");
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 0 15px 0 0;
+}
+
+.todo-list li {
+  display: block;
+  border-top: 1px solid #e7e7e7;
+  padding: 17px 0;
+}
+
+.todo-list li:hover {
+  background: #c7e8f9;
+}
+
+.todo-list li:before {
+  content: "";
+  display: inline-block;
+  margin: 0 15px 0 0;
+}
+
+.todo-list .delete {
+  margin: 0 10px 0 0;
+  float: right;
+}
+
+.delete img {
+  width: 17px;
+  height: 18px;
+}
+
+.todo-list li:before {
+  width: 14px;
+  height: 14px;
+}
+
+.todo-list li a {
+  text-decoration: none;
+  color: black;
+}
+
+.todo-list li a:hover {
+  color: #317ab2;
+}
+
+.todo-list .done {
+  text-decoration: line-through;
+  color: #bcbfc4;
+}
+
+.incomplete:before {
+  background: url("images/empty-checkbox.png");
+}
+
+.complete:before {
+  background: url("images/checked-checkbox.png");
+}
+
+[type="checkbox"] {
+  display: none;
+}
+
+/*
+ CSS for the modal
+*/
+
+#modal + div,
+#modal ~ form {
+  display: none;
+}
+
+#modal:checked + div, 
+#modal:checked ~ form {
+  display: block;
+}
+
+li > label {
+  margin: 0 0 0 -5px;
+}
+
+/*
+ CSS for the div and form to edit the todo
+*/
+
+.todo-edit-background {
+  display: none;
+  position: fixed;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.todo-edit-form {
+  display: none;
+  position: absolute;
+  top: 114px;
+  left: 441px;
+  width: 574px;
+  height: 400px;
+  background: white;
+  z-index: 2;
+  padding: 37px 39px 39px 31px;
+  box-sizing: border-box;
+  color: black;
+}
+
+#edit-title, 
+.due-date select, 
+#description {
+  box-sizing: border-box;
+  width: 395px;
+  border: 1px solid #b3b3b3;
+}
+
+#edit-title {
+  height: 36px;
+  margin: 0 0 24px 74px;
+  padding: 11px 9px;
+}
+
+.due-date {
+  margin: 0 0 24px 36px;
+  display: inline-block;
+}
+
+#description {
+  margin: 0 0 24px 28px;
+  height: 144px;
+  resize: none;
+  padding: 9px 9px;
+}
+
+.description {
+  float: left;
+  margin: 10px 0 0 0;
+}
+
+.due-date select {
+  width: 116px;
+  height: 36px;
+  padding: 9px;
+  margin: 0 11px 0 8px;
+}
+
+.due-date select:first-child {
+  margin-left: 0;
+}
+
+.due-date select:last-child {
+  margin-right: 0;
+}
+
+#year, 
+#month,
+#day {
+  color: #757575;
+}
+
+.buttons {
+  margin: -4px 0 0 108px;
+}
+
+button {
+  color: white;
+  background: #148fd5;
+  border: 0;
+  width: 184px;
+  height: 38px;
+  padding: 11px 0;
+  border-radius: 3px;
+  margin: 0 18px 0 0;
+}
+
+.buttons button:last-child {
+  margin: 0 0 0 -4px;
+}
+
+/*
+ CSS for media queries
+*/
+
+@media (max-width: 720px) {
+  input + nav {
+    display: none;
+  }
+  
+  body > label {
+    content: "";
+    width: 23px;
+    height: 18px;
+    background: url("images/menu-icon.png");  
+    display: inline-block;
+    margin: 23px 0 0 33px;
+  }
+  
+  input:checked + nav {
+    display: block;
+  }
+  
+  input + form {
+    display: none;
+  }
+  
+  main {
+    margin: -45px 0 0 0;
+  }
+}

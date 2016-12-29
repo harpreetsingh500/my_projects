@@ -1,0 +1,76 @@
+@import url('reset.css');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #2d2870;
+  font: 20px arial, sans-serif;
+  color: white;
+}
+
+h1 {
+  font-size: 34px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+main {
+  width: 90%;
+  margin: 0 auto 60px auto;
+}
+
+form {
+  margin: 30px 0;
+  padding: 10px;
+  border: 2px solid #6f7277;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: none;
+  vertical-align: middle;
+  width: 60%;
+  padding: 5px;
+}
+
+div {
+  padding: 10px;
+  border: 2px solid #6f7277;
+  border-radius: 4px;
+  display: none;
+}
+
+div p {
+  margin: 10px 0;
+}
+
+div p textarea {
+  display: block;
+  width: 60%;
+  height: 100px;
+  margin: 10px 0 0 73px;
+}
+
+div p input {
+  margin: 0 0 0 27px;
+  width: 60%;
+}
+
+@media (max-width: 1224px) {
+  label[for='key'] {
+    display: block;
+    margin: 15px 0;
+  }
+  
+  #key {
+    margin: 0 0 0 34px;
+    width: 60%;
+  }
+  
+  input[type='submit'] {
+    display: block;
+    margin: 10px 0 10px 74px;
+  }
+}

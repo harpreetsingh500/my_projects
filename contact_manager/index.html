@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel='stylesheet' href='stylesheets/main.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+    <script src="javascript/main.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Contact Manager</h1>
+    </header>
+
+    <main>
+      <div id='main-header'>
+        <a href='#' id='add-contact'>Add Contact</a>
+        <input type='text' id='search-contact' placeholder='Search'>
+      </div>
+
+      <form>
+        <h2>Create Contact</h2>
+        <div id='form-fill-out'>
+          <label id='firstName'>First name: <input type='text' name='firstName'></label>
+          <label id='lastName'>Last name: <input type='text' name='lastName'></label>
+          <label id='email'>Email address: <input type='text' name='email'></label>
+          <label id='telephone'>Telephone number: <input type='text' name='phoneNumber' maxlength='10' placeholder='ex 1234567890'>
+        </div>
+        <input type='button' value='Submit' id='submit'>
+        <input type='button' value='Cancel' id='cancel'>
+      </form>
+
+      <ul id='contact-list'></ul>
+
+      <footer>
+        <p>Developed by <a href='https://github.com/harpreetsingh500'>harpreetsingh500</a></p>
+      </footer>
+    </main>
+
+    <script id='generate-contacts' type='text/x-handlebars'>
+      <li data-id={{id}}>
+        <p>{{contactName}}</p>
+        <dt>Phone Number:</dt>
+        <dd>{{phoneNumber}}</dd>
+        <dt>Email:</dt>
+        <dd>{{contactEmail}}</dd>
+        <a href='#' class='edit-contact'><span>&#9999;</span> Edit</a>
+        <a href='#' class='delete-contact glyphicon glyphicon-trash'>Delete</a>
+      </li>
+    </script>
+
+    <script id='generate-error-message' type='text/x-handlebars'>
+      <p class='error-message'>Please enter a valid {{input}}.</p>
+    </script>
+  </body>
+</html>
