@@ -107,21 +107,6 @@ main {
   background: #654389;
 }
 
-.glyphicon {
-  position: relative;
-  top: 0;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  font-style: normal;
-  font-weight: 400;
-}
-
-.glyphicon-trash:before {
-    content: "\e020";
-    margin: 0 4px 0 0;
-    vertical-align: bottom;
-}
-
 form {
   margin: 30px 0;
   display: none;
@@ -180,13 +165,12 @@ form input[type='button']:focus {
 
 footer {
   border-top: 1px solid #dee2e8;
+  margin-bottom: 25px;
 }
 
 footer p {
   margin: 15px 0 0 0;
 }
-
-
 
 @media (max-width: 990px) {
   #contact-list li {
