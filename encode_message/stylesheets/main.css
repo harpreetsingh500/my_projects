@@ -11,7 +11,7 @@ body {
 }
 
 h1 {
-  font-size: 34px;
+  font-size: 28px;
   margin: 20px 0;
   text-align: center;
 }
@@ -63,12 +63,12 @@ div p input {
     display: block;
     margin: 15px 0;
   }
-  
+
   #key {
     margin: 0 0 0 34px;
     width: 60%;
   }
-  
+
   input[type='submit'] {
     display: block;
     margin: 10px 0 10px 74px;
