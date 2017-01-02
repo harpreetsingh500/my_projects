@@ -114,7 +114,6 @@ main {
   font-family: 'Glyphicons Halflings';
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
 }
 
 .glyphicon-trash:before {
@@ -167,7 +166,7 @@ form input[type='button'] {
 
 form input[type='button']:hover {
   color: white;
-  background: #654389;  
+  background: #654389;
 }
 
 form input[type='button']:focus {
@@ -214,11 +213,11 @@ footer p {
     float: left;
     margin: 0 0 15px 0;
   }
-  
+
   #main-header {
     padding: 20px 30%;
   }
-  
+
   #add-contact,
   #search-contact {
     float: none;
