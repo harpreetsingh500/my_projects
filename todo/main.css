@@ -346,6 +346,10 @@ button {
     display: none;
   }
 
+  nav tr {
+    padding: 14px 55px;
+  }
+
   #toggle-nav {
     content: "";
     width: 23px;
@@ -367,8 +371,8 @@ button {
 
 @media (max-width: 620px) {
   .todo-edit-form {
-    width: 90%;
-    margin-left: -45%;
+    width: 92%;
+    margin-left: -46%;
     padding: 15px 7px;
     height: auto;
   }
@@ -386,7 +390,7 @@ button {
   }
 
   .due-date select {
-    width: 32%;
+    width: 30%;
     height: 36px;
     padding: 0;
     margin: 0;
@@ -406,11 +410,5 @@ button {
   .buttons button {
     width: 75%;
     margin: 0 0 5px 0;
-  }
-}
-
-@media (max-width: 340px) {
-  nav tr {
-    padding: 14px 55px;
   }
 }
