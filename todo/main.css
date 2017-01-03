@@ -1,9 +1,9 @@
 @import url("reset.css");
 
 body,
-select, 
+select,
 button,
-input, 
+input,
 textarea {
   font: 16px Helvetica, Arial, sans-serif;
 }
@@ -84,7 +84,7 @@ nav table tr:first-child {
 }
 
 .all-todos .title:before {
-  background: url("images/list-icon.png");  
+  background: url("images/list-icon.png");
 }
 
 .highlight {
@@ -229,7 +229,7 @@ main li {
   display: none;
 }
 
-#modal:checked + div, 
+#modal:checked + div,
 #modal:checked ~ form {
   display: block;
 }
@@ -257,19 +257,20 @@ li > label {
 .todo-edit-form {
   display: none;
   position: absolute;
-  top: 114px;
-  left: 441px;
+  top: 75px;
+  left: 50%;
   width: 574px;
   height: 400px;
   background: white;
   z-index: 2;
   padding: 37px 39px 39px 31px;
+  margin-left: -287px;
   box-sizing: border-box;
   color: black;
 }
 
-#edit-title, 
-.due-date select, 
+#edit-title,
+.due-date select,
 #description {
   box-sizing: border-box;
   width: 395px;
@@ -314,7 +315,7 @@ li > label {
   margin-right: 0;
 }
 
-#year, 
+#year,
 #month,
 #day {
   color: #757575;
@@ -329,14 +330,10 @@ button {
   background: #148fd5;
   border: 0;
   width: 184px;
-  height: 38px;
+  height: 34px;
   padding: 11px 0;
   border-radius: 3px;
-  margin: 0 18px 0 0;
-}
-
-.buttons button:last-child {
-  margin: 0 0 0 -4px;
+  margin: 0 8px 0 0;
 }
 
 /*
@@ -344,28 +341,76 @@ button {
 */
 
 @media (max-width: 720px) {
-  input + nav {
+  nav {
+    width: 100%;
     display: none;
   }
-  
-  body > label {
+
+  #toggle-nav {
     content: "";
     width: 23px;
     height: 18px;
-    background: url("images/menu-icon.png");  
+    background: url("images/menu-icon.png");
     display: inline-block;
-    margin: 23px 0 0 33px;
+    margin: 15px;
   }
-  
-  input:checked + nav {
-    display: block;
-  }
-  
+
   input + form {
     display: none;
   }
-  
+
   main {
     margin: -45px 0 0 0;
+    padding: 77px 55px 228px 20px;
+  }
+}
+
+@media (max-width: 620px) {
+  .todo-edit-form {
+    width: 90%;
+    margin-left: -45%;
+    padding: 15px 7px;
+    height: auto;
+  }
+
+  #edit-title,
+  .due-date,
+  #description {
+    margin: 10px 0;
+    width: 95%;
+    display: block;
+  }
+
+  .description {
+    float: none;
+  }
+
+  .due-date select {
+    width: 32%;
+    height: 36px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .buttons {
+    text-align: center;
+    margin: 0;
+  }
+
+  button {
+    width: 45%;
+  }
+}
+
+@media (max-width: 410px) {
+  .buttons button {
+    width: 75%;
+    margin: 0 0 5px 0;
+  }
+}
+
+@media (max-width: 340px) {
+  nav tr {
+    padding: 14px 55px;
   }
 }
