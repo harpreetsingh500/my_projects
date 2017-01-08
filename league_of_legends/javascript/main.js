@@ -5,6 +5,11 @@ function getChampionNames() {
   $.getJSON(link, function(data) {
     championNames = Object.keys(data.data);
     showChampionImages(championNames, data.data);
+
+    $("img.lazy").lazyload({
+      effect: 'fadeIn',
+      threshold: 200
+    });
   });
 }
 
@@ -110,7 +115,7 @@ function changeMarginValue() {
 $(function() {
   function modalToggle() {
     $modal.toggle();
-    $championInfo.toggle();
+    $championInfo.fadeToggle();
   }
 
   var $championList = $('#champion-list'),
@@ -140,6 +145,10 @@ $(function() {
     });
 
     filterChampions(types);
+    $("img.lazy").lazyload({
+      effect: 'fadeIn',
+      threshold: 200
+    });
   });
 
   $championInfo.on('click', 'h3', function() {

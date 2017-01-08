@@ -55,6 +55,8 @@ input[type='submit'] {
 
 .champion img {
   width: 100%;
+  height: auto;
+  display: block;
 }
 
 #modal {
@@ -137,10 +139,18 @@ input[type='submit'] {
     font-size: 28px;
   }
 
+  form {
+    overflow: hidden;
+  }
+
   form label {
-    display: block;
-    text-align: left;
+    float: left;
+    clear: left;
     margin: 0 0 8px 0;
+  }
+
+  input[type='submit'] {
+    clear: both;
   }
 
   .champion {

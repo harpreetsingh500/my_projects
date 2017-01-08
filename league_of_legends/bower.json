@@ -1,0 +1,22 @@
+{
+  "name": "league_of_legends",
+  "description": "",
+  "main": "Gruntfile.js",
+  "authors": [
+    "harpreet singh <harpeetsingh500@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/harpreetsingh500/my_projects",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "jquery_lazyload": "jquery.lazyload#^1.9.7",
+    "jquery": "^3.1.1"
+  }
+}
