@@ -54,15 +54,14 @@ function makeId() {
 }
 
 function appendContact(data) {
-  var template = Handlebars.compile($('#generate-contacts').html()),
-      obj = {
+  var obj = {
         id: data.id,
         contactName: data.firstName + ' ' + data.lastName,
         phoneNumber: data.phoneNumber,
         contactEmail: data.email
       };
 
-  $('#contact-list').append(template(obj));
+  $('#contact-list').append(JST['contacts'](obj));
 }
 
 function checkData(data) {
@@ -102,12 +101,11 @@ function checkPhoneNumber(number) {
 }
 
 function outputError(message, input) {
-  var template = Handlebars.compile($('#generate-error-message').html());
   var obj = {
     input: message
   }
 
-  $('#' + input).append(template(obj));
+  $('#' + input).append(JST['error-message'](obj));
 }
 
 function deleteErrorMessages() {

@@ -4,11 +4,7 @@
     <title>Contact Manager</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel='stylesheet' href='stylesheets/main.css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-    <script src="https://use.fontawesome.com/6047fae5b4.js"></script>
-    <script src="javascript/main.js"></script>
+    <link rel='stylesheet' href='public/stylesheets/main.css'>
   </head>
 
   <body>
@@ -41,20 +37,6 @@
       </footer>
     </main>
 
-    <script id='generate-contacts' type='text/x-handlebars'>
-      <li data-id={{id}}>
-        <p>{{contactName}}</p>
-        <dt>Phone Number:</dt>
-        <dd>{{phoneNumber}}</dd>
-        <dt>Email:</dt>
-        <dd>{{contactEmail}}</dd>
-        <a href='#' class='edit-contact'><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-        <a href='#' class='delete-contact'><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
-      </li>
-    </script>
-
-    <script id='generate-error-message' type='text/x-handlebars'>
-      <p class='error-message'>Please enter a valid {{input}}.</p>
-    </script>
+    <script src="public/javascripts/all.js"></script>
   </body>
 </html>

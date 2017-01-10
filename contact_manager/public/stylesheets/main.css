@@ -127,6 +127,7 @@ form h2 {
 form label {
   margin: 0 0 10px 0;
   width: 100%;
+  display: block;
 }
 
 .error-message {
