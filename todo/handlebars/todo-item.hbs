@@ -1,0 +1,9 @@
+{{#if done}}
+  <li class='complete' data-date={{date}}>
+  <a href="#" class='todo-name done' data-id={{id}}>{{item}} - {{dueDate}}</a>
+{{else}}
+  <li class='incomplete' data-date={{date}}>
+  <a href="#" class='todo-name' data-id={{id}}>{{item}} - {{dueDate}}</a>
+{{/if}}
+<a href="#" class='delete'><img src="public/images/delete-button.png"></a>
+</li>

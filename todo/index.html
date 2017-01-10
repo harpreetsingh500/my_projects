@@ -4,10 +4,7 @@
     <title>Todo</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel='stylesheet' href='main.css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-    <script src="todo.js"></script>
+    <link rel='stylesheet' href='public/stylesheets/main.css'>
   </head>
 
   <body>
@@ -73,16 +70,6 @@
       </form>
     </main>
 
-    <script id='todo-items' type='text/x-handlebars'>
-      {{#if done}}
-        <li class='complete' data-date={{date}}>
-        <a href="#" class='todo-name done' data-id={{id}}>{{item}} - {{dueDate}}</a>
-      {{else}}
-        <li class='incomplete' data-date={{date}}>
-        <a href="#" class='todo-name' data-id={{id}}>{{item}} - {{dueDate}}</a>
-      {{/if}}
-      <a href="#" class='delete'><img src="images/delete-button.png"></a>
-      </li>
-    </script>
+    <script src="public/javascripts/all.js"></script>
   </body>
 </html>

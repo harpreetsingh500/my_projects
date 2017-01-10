@@ -84,7 +84,7 @@ nav table tr:first-child {
 }
 
 .all-todos .title:before {
-  background: url("images/list-icon.png");
+  background: url("../images/list-icon.png");
 }
 
 .highlight {
@@ -106,7 +106,7 @@ nav table tr:first-child {
 */
 
 .completed .title:before {
-  background: url("images/checkbox-complete.png");
+  background: url("../images/checkbox-complete.png");
 }
 
 .completed tr:nth-child(n + 2) td:first-child {
@@ -156,7 +156,7 @@ main li {
 
 .add-todo:before {
   content: "";
-  background: url("images/add-todo.png");
+  background: url("../images/add-todo.png");
   display: inline-block;
   width: 13px;
   height: 13px;
@@ -209,11 +209,11 @@ main li {
 }
 
 .incomplete:before {
-  background: url("images/empty-checkbox.png");
+  background: url("../images/empty-checkbox.png");
 }
 
 .complete:before {
-  background: url("images/checked-checkbox.png");
+  background: url("../images/checked-checkbox.png");
 }
 
 [type="checkbox"] {
@@ -354,7 +354,7 @@ button {
     content: "";
     width: 23px;
     height: 18px;
-    background: url("images/menu-icon.png");
+    background: url("../images/menu-icon.png");
     display: inline-block;
     margin: 15px;
   }

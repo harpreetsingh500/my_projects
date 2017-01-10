@@ -28,7 +28,10 @@ function makeNewID() {
   return id;
 }
 
-function saveData(data, id = '', done = false) {
+function saveData(data, id, done) {
+  id = (id === undefined) ? '' : id;
+  done = (done === undefined) ? false : done;
+
   var obj = convertDataToObject(data),
       allTodos = JSON.parse(localStorage.todos);
 
@@ -42,7 +45,9 @@ function saveData(data, id = '', done = false) {
   return modifyObject(obj, id);
 }
 
-function saveAsComplete(id, value = true) {
+function saveAsComplete(id, value) {
+  value = (value === undefined) ? true : value;
+
   var allTodos = JSON.parse(localStorage.todos),
       obj = JSON.parse(allTodos[id]);
 
@@ -82,10 +87,9 @@ function getData() {
 }
 
 function appendData(obj) {
-  var $todoList = $('.todo-list'),
-      template = Handlebars.compile($('#todo-items').html());
+  var $todoList = $('.todo-list');
 
-  $todoList.append(template(obj));
+  $todoList.append(JST['todo-items'](obj));
 }
 
 function modifyObject(obj, id) {
