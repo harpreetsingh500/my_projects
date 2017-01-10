@@ -44,12 +44,12 @@ input[type='submit'] {
 
 .champion {
   float: left;
-  width: 32.66%;
+  width: 19.2%;
   margin: 0 1% 1% 0;
   cursor: pointer;
 }
 
-.champion:nth-child(3n) {
+.champion:nth-child(5n) {
   margin-right: 0;
 }
 
@@ -153,9 +153,14 @@ input[type='submit'] {
     clear: both;
   }
 
-  .champion {
-    width: 100%;
-    margin: 0 0 15px 0;
+  .champion,
+  .champion:nth-child(5n) {
+    width: 32.66%;
+    margin: 0 1% 1% 0;
+  }
+
+  .champion:nth-child(3n) {
+    margin-right: 0;
   }
 
   .champion-skins li {

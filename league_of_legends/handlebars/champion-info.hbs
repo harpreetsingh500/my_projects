@@ -1,0 +1,23 @@
+<div class='champion-spells'>
+  <p class='close'>Click here to exit.</p>
+  <h2>Champion Name: {{championName}}</h2>
+  <h3>Click to show/hide: Spells</h3>
+  <ul>
+    <li><img src={{passiveImage}}><p><span>Passive:</span> {{passiveInfo}}</p></li>
+    <li><img src={{qImage}}><p><span>Q:</span> {{qInfo}}</p></li>
+    <li><img src={{wImage}}><p><span>W:</span> {{wInfo}}</p></li>
+    <li><img src={{eImage}}><p><span>E:</span> {{eInfo}}</p></li>
+    <li><img src={{rImage}}><p><span>R:</span> {{rInfo}}</p></li>
+  </ul>
+</div>
+<div class='champion-skins'>
+  <h3>Click to show/hide: Skins</h3>
+  <ul>
+    {{#each skins}}
+      <li>
+        <p>{{this.name}}</p>
+        <img src={{this.imageLink}} alt=' Image not found'>
+      </li>
+    {{/each}}
+  </ul>
+</div>

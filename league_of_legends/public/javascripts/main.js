@@ -14,18 +14,17 @@ function getChampionNames() {
 }
 
 function showChampionImages(names, data) {
-  var template = Handlebars.compile($('#generate-champions').html()),
-      $championList = $('#champion-list'),
-      link = 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/';
+  var $championList = $('#champion-list'),
+      link = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/';
 
   names.forEach(function(name) {
     var obj = {
       championName: name,
       championType: data[name].tags.join('_'),
-      championImage: link + name + '_0.jpg'
+      championImage: link + name + '.png'
     };
 
-    $championList.append(template(obj));
+    $championList.append(JST['champion-image'](obj));
   });
 }
 
@@ -38,8 +37,7 @@ function getChampionInfo(name) {
 }
 
 function showChampionInfo(data, name) {
-  var template = Handlebars.compile($('#generate-champion-info').html()),
-      $championInfo = $('#champion-info'),
+  var $championInfo = $('#champion-info'),
       spellImage = 'https://ddragon.leagueoflegends.com/cdn/6.22.1/img/spell/',
       passiveImage = 'https://ddragon.leagueoflegends.com/cdn/6.22.1/img/passive/',
       skinImage = 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/',
@@ -67,7 +65,7 @@ function showChampionInfo(data, name) {
     skins: skins
   }
 
-  $championInfo.append(template(obj));
+  $championInfo.append(JST['champion-info'](obj));
 }
 
 function modifyString(str) {
@@ -104,7 +102,9 @@ function filterChampions(types) {
 
 function changeMarginValue() {
   $('.champion').filter(':visible').each(function(idx) {
-    if ((idx + 1) % 3 === 0) {
+    if (window.innerWidth <= 750 && (idx + 1) % 3 === 0) {
+      $(this).css('margin', '0 0 1% 0');
+    } else if (window.innerWidth > 750 && (idx + 1) % 5 === 0) {
       $(this).css('margin', '0 0 1% 0');
     } else {
       $(this).css('margin', '0 1% 1% 0');
@@ -159,6 +159,8 @@ $(function() {
   $championInfo.on('click', '.close', modalToggle);
 
   $($modal).on('click', modalToggle);
+
+  $(window).resize(changeMarginValue);
 
   getChampionNames();
 });

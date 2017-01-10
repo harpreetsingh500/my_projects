@@ -3,13 +3,13 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         files: {
-          "javascript/all.js": ["javascript/all.js"]
+          "public/javascripts/all.js": ["public/javascripts/all.js"]
         }
       }
     },
     bower_concat: {
       all: {
-        dest: "javascript/vendor/all.js",
+        dest: "public/javascripts/vendor/all.js",
         dependencies: {
           "jquery_lazyload": "jquery",
           "handlebars": "jquery"
@@ -21,8 +21,18 @@ module.exports = function(grunt) {
         separator: ";"
       },
       dist: {
-        src: ["javascript/vendor/all.js", "javascript/main.js"],
-        dest: "javascript/all.js"
+        src: ["public/javascripts/vendor/all.js", "public/javascripts/handlebarsTemplates.js", "public/javascripts/main.js"],
+        dest: "public/javascripts/all.js"
+      }
+    },
+    handlebars: {
+      all: {
+        files: {
+          "public/javascripts/handlebarsTemplates.js": ["handlebars/**/*.hbs"]
+        },
+        options: {
+          processName: extractFileName
+        }
       }
     }
   });
@@ -30,6 +40,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-bower-concat");
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-handlebars');
 
   grunt.registerTask("default", ["bower_concat", "concat", "uglify"]);
 };
+
+function extractFileName(file) {
+  return file.match(/\/(.+)\.hbs/).pop();
+}
