@@ -67,27 +67,25 @@ function decodeLetter(idx) {
 }
 
 function appendMessageEncoded(message, key) {
-  var template = Handlebars.compile($('#show-message-encoded').html()),
-      $encodedMessage = $('#encodedMessage'),
+  var $encodedMessage = $('#encodedMessage'),
       obj = {
         message: message,
         key: key
       };
 
   $encodedMessage.html('')
-                 .append(template(obj))
+                 .append(JST['encoded-message'](obj))
                  .show();
 }
 
 function appendMessageDecoded(message) {
-  var template = Handlebars.compile($('#show-message-decoded').html()),
-      $decodedMessage = $('#decodedMessage'),
+  var $decodedMessage = $('#decodedMessage'),
       obj = {
         message: message
       };
 
   $decodedMessage.html('')
-                 .append(template(obj))
+                 .append(JST['decoded-message'](obj))
                  .show();
 }
 
