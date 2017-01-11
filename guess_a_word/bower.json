@@ -1,0 +1,20 @@
+{
+  "name": "guess_a_word",
+  "homepage": "https://github.com/harpreetsingh500/my_projects",
+  "authors": [
+    "harpreet singh <harpeetsingh500@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
