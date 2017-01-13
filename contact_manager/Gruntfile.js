@@ -1,5 +1,14 @@
 module.exports = function(grunt) {
   grunt.initConfig({
+    copy: {
+      main: {
+        expand: true,
+        cwd: "bower_components/components-font-awesome/",
+        src: ["css/*min.css",
+              "fonts/*"],
+        dest: "public/stylesheets/font-awesome/"
+      }
+    },
     uglify: {
       my_target: {
         files: {
@@ -34,6 +43,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-bower-concat");
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks("grunt-contrib-handlebars");
+  grunt.loadNpmTasks("grunt-contrib-copy");
 
   grunt.registerTask("default", ["bower_concat", "concat", "uglify"]);
 };
